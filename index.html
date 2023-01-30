@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <title>FitGo | Fitness Gamified.</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="./assets/img/logo.png" type="image/png">
+    <link href="style.css" rel="stylesheet" />
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="landing__wrapper">
+      <div class="header">
+        <div class="logo">
+          <img src="./assets/img/logo.png" alt="GoFit Logo" />
+        </div>
+        <div>
+          <button type="button" class="btn btn-primary" onclick="window.location.href='https://fitgoyoga.netlify.app/'; ">Enjoy Our AI Based Yoga Session</button>
+        </div>
+      </div>
+      <div class="landing__content">
+        <div class="sub__text">DON'T JUST PUSH BUTTONS, PUSH YOURSELF.</div>
+        <div class="main__text">Track your fitness in a Game.</div>
+
+        <form action="#" class="code__form">
+          <input
+            type="text"
+            name="code"
+            id="code"
+            class="code__input"
+            placeholder="Game Code"
+            maxlength="6"
+            minlength="6"
+          />
+        </form>
+
+        <div class="input__loader">
+          <svg
+            class="spinner"
+            width="65px"
+            height="65px"
+            viewBox="0 0 66 66"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              class="circle"
+              fill="none"
+              stroke-width="6"
+              stroke-linecap="round"
+              cx="33"
+              cy="33"
+              r="30"
+            ></circle>
+          </svg>
+
+          Connecting...
+        </div>
+      </div>
+    </div>
+    <div id="gofit-world"></div>
+
+    <script type="text/javascript" src="assets/js/three.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-database.js"></script>
+    <script src="./assets/js/firebase.js"></script>
+    <script type="text/javascript" src="assets/js/landing.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>
