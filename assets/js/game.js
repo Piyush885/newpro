@@ -180,6 +180,15 @@ function World() {
     });
     
 
+    document.addEventListener("mousedown", function(event) {
+      if (event.button === 0) {
+        character.onUpKeyPressed();
+        console.log("left mouse");
+      }
+    });
+
+
+
 
 
 
