@@ -134,7 +134,7 @@ function World() {
     var p = 80;
 
     keysAllowed = {};
-    document.addEventListener("keydown", function (e) {
+    document.addEventListener("keydown",function (e) {
       if (!gameOver) {
         var key = e.keyCode;
         // if (keysAllowed[key] === false) return;
@@ -166,6 +166,26 @@ function World() {
         }
       }
     });
+
+    // Mouse event-----------
+
+    document.addEventListener("wheel", function(event) {
+      if (event.deltaY > 0) {
+        character.onRightKeyPressed();
+        console.log("scrolling")
+      }
+      else if(event.deltaY<0){
+        character.onLeftKeyPressed();
+      }
+    });
+    
+
+
+
+
+
+
+
 
     // let database = firebase.database();
 
