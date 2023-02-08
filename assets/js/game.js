@@ -182,15 +182,15 @@ function World() {
     database.ref(`${game_code}`).on("value", (snapshot) => {
       const data = snapshot.val();
       //   // JUMP
-      // console.log("ye h data",data)
-      // if (data.actions == 0) {
-      //   character.onUpKeyPressed();
-      // } else if (data.actions == 1) {
-      //   character.onLeftKeyPressed();
-      // } else if (data.actions== -1){
-      //   character.onRightKeyPressed();
-      // }
-      //else {};
+      console.log("ye h data",data)
+      if (data.actions == 0) {
+        character.onUpKeyPressed();
+      } else if (data.actions == 1) {
+        character.onLeftKeyPressed();
+      } else if (data.actions== -1){
+        character.onRightKeyPressed();
+      }
+      else {};
     });
 
     document.addEventListener("keyup", function (e) {
@@ -227,27 +227,27 @@ function World() {
               maxTreeSize = 0.5;
               break;
             case 2:
-              treePresenceProb = 0.40;
+              treePresenceProb = 0.35;
               maxTreeSize = 0.85;
               break;
             case 3:
-              treePresenceProb = 0.40;
+              treePresenceProb = 0.35;
               maxTreeSize = 0.85;
               break;
             case 4:
-              treePresenceProb = 0.40;
+              treePresenceProb = 0.35;
               maxTreeSize = 0.85;
               break;
             case 5:
-              treePresenceProb = 0.40;
+              treePresenceProb = 0.35;
               maxTreeSize = 0.85;
               break;
             case 6:
-              treePresenceProb = 0.40;
+              treePresenceProb = 0.35;
               maxTreeSize = 0.85;
               break;
             default:
-              treePresenceProb = 0.40;
+              treePresenceProb = 0.35;
               maxTreeSize = 0.85;
           }
         }
