@@ -132,7 +132,7 @@ function World() {
     var up = 38;
     var right = 39;
     var p = 80;
-
+    
     keysAllowed = {};
     document.addEventListener("keydown",function (e) {
       if (!gameOver) {
@@ -212,14 +212,14 @@ function World() {
       const data = snapshot.val();
       //   // JUMP
       console.log("ye h data",data)
-      if (data.actions == 0) {
-        character.onUpKeyPressed();
-      } else if (data.actions == 1) {
-        character.onLeftKeyPressed();
-      } else if (data.actions== -1){
-        character.onRightKeyPressed();
-      }
-      else {};
+      // if (data.actions == 0) {
+      //   character.onUpKeyPressed();
+      // } else if (data.actions == 1) {
+      //   character.onLeftKeyPressed();
+      // } else if (data.actions== -1){
+      //   character.onRightKeyPressed();
+      // }
+      // else {};
     });
 
     document.addEventListener("keyup", function (e) {
