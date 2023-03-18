@@ -126,6 +126,7 @@ function World() {
     // The game is paused to begin with and the game is not over.
     gameOver = false;
     paused = true;
+    countmovements = 0
 
     // Start receiving feedback from the player.
     var left = 37;
@@ -172,10 +173,12 @@ function World() {
     document.addEventListener("wheel", function(event) {
       if (event.deltaY > 0) {
         character.onRightKeyPressed();
+        countmovements+=1
         console.log("scrolling")
       }
       else if(event.deltaY<0){
         character.onLeftKeyPressed();
+        countmovements+=1
       }
     });
     
@@ -183,9 +186,11 @@ function World() {
     document.addEventListener("mousedown", function(event) {
       if (event.button === 0) {
         character.onUpKeyPressed();
+        countmovements+=1
         console.log("left mouse");
       }
     });
+    
 
 
 
@@ -309,6 +314,17 @@ function World() {
       if (collisionsDetected()) {
         gameOver = true;
         paused = true;
+        function writeUserData(score) {
+          //let database = firebase.database();
+          firebase.database().ref("628713").update({
+            calorie:score,
+            over:1
+          });
+        }
+        writeUserData(countmovements);
+        countmovements = 0;
+        
+        console.log("Your total count is ",countmovements,"data is stored on database");
         document.addEventListener("keydown", function (e) {
           if (e.keyCode == 40) document.location.reload(true);
         });
