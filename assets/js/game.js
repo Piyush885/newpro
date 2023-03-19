@@ -172,35 +172,38 @@ function World() {
 
     document.addEventListener("wheel", function(event) {
       if (event.deltaY > 0) {
-        character.onRightKeyPressed();
-        countmovements+=1
-        console.log("scrolling")
+        character.onRightKeyPressed()
+        countmovements++;
+        console.log(countmovements)
+        event.deltaY=0;
+        //console.log("scrolling")
       }
       else if(event.deltaY<0){
-        character.onLeftKeyPressed();
-        countmovements+=1
+        character.onLeftKeyPressed()
+        countmovements++;
+        console.log(countmovements)
+        event.deltaY=0;
       }
     });
+
+
+
+
+
+
+
     
 
+
+    
+    // Jump Mouse
     document.addEventListener("mousedown", function(event) {
       if (event.button === 0) {
-        character.onUpKeyPressed();
+        character.onUpKeyPressed()
         countmovements+=1
-        console.log("left mouse");
       }
     });
     
-
-
-
-
-
-
-
-
-
-
     // let database = firebase.database();
 
     // database
@@ -314,17 +317,16 @@ function World() {
       if (collisionsDetected()) {
         gameOver = true;
         paused = true;
-        function writeUserData(score) {
+        function writeUserData(countmovements) {
           //let database = firebase.database();
           firebase.database().ref("628713").update({
-            calorie:score,
+            calorie:countmovements,
             over:1
           });
         }
         writeUserData(countmovements);
-        countmovements = 0;
-        
         console.log("Your total count is ",countmovements,"data is stored on database");
+        //countmovements = 0;
         document.addEventListener("keydown", function (e) {
           if (e.keyCode == 40) document.location.reload(true);
         });
