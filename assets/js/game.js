@@ -127,6 +127,7 @@ function World() {
     gameOver = false;
     paused = true;
     countmovements = 0
+    over = 0
 
     // Start receiving feedback from the player.
     var left = 37;
@@ -316,12 +317,13 @@ function World() {
       // Check for collisions between the character and objects.
       if (collisionsDetected()) {
         gameOver = true;
+        over = 1
         paused = true;
         function writeUserData(countmovements) {
           //let database = firebase.database();
           firebase.database().ref("628713").update({
             calorie:countmovements,
-            over:1
+            over:over
           });
         }
         writeUserData(countmovements);
